@@ -4,13 +4,17 @@ fun colorAzul() = "\u001B[34m"
 fun colorRojo() = "\u001B[31m"
 fun colorLila() = "\u001B[35m"
 
-
-
 /**
  * Función principal que ejecuta la lógica de compra de billetes hasta un máximo de 3 intentos.
  * Muestra un menú de opciones y permite al usuario seleccionar el tipo de billete a comprar.
  */
 fun main() {
+    println("""
+        .------------------------.
+        | Benvingut a la màquina |
+        | de venda de bitllets!  |
+        '------------------------'
+    """.trimIndent())
     var bitllets = 0
     while (bitllets < 3) {
         MenuBitllets()
@@ -51,7 +55,9 @@ fun MenuBitllets() {
  * @return Opción seleccionada por el usuario.
  */
 fun demanarOpcio(): Int {
-    return llegirInt("Introdueix el número del bitllet que vols comprar: ", 0, 5)
+    return llegirInt("Introdueix el número del bitllet que vols comprar: ",
+        0,
+        5)
 }
 
 /**
